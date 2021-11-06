@@ -2,6 +2,7 @@ import InitializationFirebaseApp from '../Firebasesetup/Firebaseinit';
 import {updateProfile,sendPasswordResetEmail, getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
 import { useEffect, useState } from 'react';
 
+
 InitializationFirebaseApp();
 
 const UseFirebase = () => {
@@ -9,6 +10,7 @@ const UseFirebase = () => {
     const [user,setUser] = useState({});
     const [isloading, setIsLoading] = useState(true);
     const [userprofile,setUserprofile] = useState({});
+    
 
     const auth = getAuth();
 //google sign in
@@ -87,6 +89,8 @@ const UseFirebase = () => {
 
             });
     }
+
+  
     return{
         GoogleSignin,
         user,
@@ -95,7 +99,8 @@ const UseFirebase = () => {
         LogOut,
         isloading,
         ResetPassword,
-        UpdatingUserinfo
+        UpdatingUserinfo,
+        
     }
 
 }
